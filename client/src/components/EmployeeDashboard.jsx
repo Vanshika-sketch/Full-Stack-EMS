@@ -28,8 +28,8 @@ const EmployeeDashboard = ({data}) => {
   return (
     <div className='animate-fade-in'>
         <div className='page-header'>
-            <h1 className='page-subtitle'>Welcome, {emp?.firstName}!</h1>
-            <p>
+            <h1 className='page-title'>Welcome, {emp?.firstName}!</h1>
+            <p className='page-subtitle'>
                 {emp?.position} - {emp?.department || 'No Department'}
             </p>
         </div>
