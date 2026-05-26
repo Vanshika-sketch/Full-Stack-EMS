@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect } from "react";
 import { dummyEmployeeData, DEPARTMENTS } from "../assets/assets";
 import { Plus, Search, X } from "lucide-react";
 import EmployeeCard from "../components/EmployeeCard";
+import Employeeform from "../components/Employeeform";
 
 const Employees = () => {
   const [employees, setEmployees] = useState([]);
@@ -122,7 +123,15 @@ const Employees = () => {
                 <X className="w-5 h-5" />
               </button>
             </div>
-            <div className="p-6">form</div>
+            <div className="p-6">
+              <Employeeform
+                onSuccess={() => {
+                  setShowCreateModal(false);
+                  fetchEmployees();
+                }}
+                onCancel={() => setShowCreateModal(false)}
+              />
+            </div>
           </div>
         </div>
       )}
@@ -140,7 +149,7 @@ const Employees = () => {
             <div className="flex items-center justify-between p-6 pb-0">
               <div>
                 <h2 className="text-lg font-semibold text-slate-900">
-                 Edit Employee
+                  Edit Employee
                 </h2>
                 <p className="text-sm text-slate-500 mt-0.5">
                   Update Employee Details
@@ -154,7 +163,14 @@ const Employees = () => {
               </button>
             </div>
             <div className="p-6">
-              form
+              <Employeeform
+                initialData={editEmployee}
+                onSuccess={() => {
+                  setEditEmployee(null);
+                  fetchEmployees();
+                }}
+                onCancel={() => setEditEmployee(null)}
+              />
             </div>
           </div>
         </div>
