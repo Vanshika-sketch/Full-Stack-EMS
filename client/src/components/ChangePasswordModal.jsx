@@ -44,26 +44,33 @@ const ChangePasswordModal = ({ open, onClose }) => {
           )}
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-2">
-                Current Password
+              Current Password
             </label>
-            <input type="password" name="currentPassword" required/>
+            <input type="password" name="currentPassword" required />
           </div>
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-2">
-                New Password
+              New Password
             </label>
-            <input type="password" name="newPassword" required/>
+            <input type="password" name="newPassword" required />
           </div>
           <div className="flex gap-3 pt-2">
-            <button type="button" onClick={onClose} className="btn-secondary flex-1">
-                Cancel
+            <button
+              type="button"
+              onClick={onClose}
+              className="btn-secondary flex-1"
+            >
+              Cancel
             </button>
-            <button type="submit" disabled={loading} className="btn-primary flex-1 flex justify-center items-center gap-2">
-                {loading && <Loader2Icon className="w-4 h-4 animate-spin"/>}
-                Update Password
+            <button
+              type="submit"
+              disabled={loading}
+              className="btn-primary flex-1 flex justify-center items-center gap-2"
+            >
+              {loading && <Loader2Icon className="w-4 h-4 animate-spin" />}
+              Update Password
             </button>
           </div>
-          
         </form>
       </div>
     </div>
